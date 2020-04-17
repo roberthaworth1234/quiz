@@ -122,14 +122,18 @@ export default class PictureRound extends Component {
                                );
                              })}
                            </div>
-                           <p>{this.state.score} / 16</p>
-                           <button
+                           <p>Picture Score {this.state.score} / 16</p>
+                           <div
                              onClick={() => {
                                this.handleClick(this.state.toggled);
                              }}
+                             class="backBtn"
                            >
-                             Back
-                           </button>
+                             <span class="line tLine"></span>
+                             <span class="line mLine"></span>
+                             <span class="label">Back to Homepage</span>
+                             <span class="line bLine"></span>
+                           </div>
                          </div>
                        </Animated>
                      );

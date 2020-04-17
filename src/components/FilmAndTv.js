@@ -125,13 +125,17 @@ export default class FilmAndTv extends Component {
                                </Animated>
                              );
                            })}
-                           <button
+                           <div
                              onClick={() => {
                                this.handleClick(this.state.toggled);
                              }}
+                             class="backBtn"
                            >
-                             Back
-                           </button>
+                             <span class="line tLine"></span>
+                             <span class="line mLine"></span>
+                             <span class="label">Back to Homepage</span>
+                             <span class="line bLine"></span>
+                           </div>
                          </div>
                        </Animated>
                      );

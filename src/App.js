@@ -88,7 +88,8 @@ export default class App extends Component {
                      },
                      {
                        id: 8,
-                       q: "What was the initial name of the pop band the Spice Girls?",
+                       q:
+                         "What was the initial name of the pop band the Spice Girls?",
                        guess1: "Spicy",
                        guess2: "Geri and the Pacemakers",
                        guess3: "Touch",
@@ -113,7 +114,7 @@ export default class App extends Component {
                    filmQuestions: [
                      {
                        id: 0,
-                       q: "Who Directed the Film Memento",
+                       q: "Who Directed the Film Memento?",
                        guess1: "Darren Aronofsky",
                        guess2: "Guy Pearce",
                        guess3: "Christopher Nolan",
@@ -121,7 +122,8 @@ export default class App extends Component {
                      },
                      {
                        id: 1,
-                       q: "What was Chandler's middle name in the sitcom Friends?",
+                       q:
+                         "What was Chandler's middle name in the sitcom Friends?",
                        guess1: "Ainsley",
                        guess2: "Bing",
                        guess3: "Muriel",
@@ -129,7 +131,8 @@ export default class App extends Component {
                      },
                      {
                        id: 2,
-                       q: "William Moreland is a popular character from which of these TV series?",
+                       q:
+                         "William Moreland is a popular character from which of these TV series?",
                        guess1: "Buffy",
                        guess2: "Breaking Bad",
                        guess3: "Angel",
@@ -137,7 +140,8 @@ export default class App extends Component {
                      },
                      {
                        id: 3,
-                       q: "Which of these Films were not directed by Darren Aronofsky",
+                       q:
+                         "Which of these Films were not directed by Darren Aronofsky?",
                        guess1: "The Wrestler",
                        guess2: "Mother!",
                        guess3: "Pi",
@@ -153,7 +157,8 @@ export default class App extends Component {
                      },
                      {
                        id: 5,
-                       q: "Who is the DI (Detective Inspector), at AC12, in Season 5 of Line of Duty",
+                       q:
+                         "Who is the DI (Detective Inspector), at AC12, in Season 5 of Line of Duty",
                        guess1: "Steve Arnott",
                        guess2: "Kate Fleming",
                        guess3: "Ted Hastings",
@@ -161,7 +166,8 @@ export default class App extends Component {
                      },
                      {
                        id: 6,
-                       q: "'My name is Inigo Montoya. You killed my father...Prepare to die'. This a line from which cult classic film",
+                       q:
+                         "'My name is Inigo Montoya. You killed my father...Prepare to die'. Is a line from which cult classic film?",
                        guess1: "The Never Ending Story",
                        guess2: "The Princess Bride",
                        guess3: "Labyrinth",
@@ -169,7 +175,8 @@ export default class App extends Component {
                      },
                      {
                        id: 7,
-                       q: "In the 1990 Film Teenage Mutant Hero Turtles. Who plays the voice of Donatello?",
+                       q:
+                         "In the 1990 Film Teenage Mutant Hero Turtles. Who plays the voice of Donatello?",
                        guess1: "Keifer Sutherland",
                        guess2: "River Pheonix",
                        guess3: "Corey Feldman",
@@ -178,16 +185,19 @@ export default class App extends Component {
                      {
                        id: 8,
                        q: "In the 1991 film 'Hook', who played Granny Wendy?",
-                       guess1: "Yo",
-                       guess2: "no",
-                       guess3: "woohoo"
+                       guess1: "Judy Dench",
+                       guess2: "Caroline Goodall",
+                       guess3: "Maggie Smith",
+                       guess4: "Laurel Cronin"
                      },
                      {
-                       id: 2,
-                       q: "tell me the?",
-                       guess1: "Yo",
-                       guess2: "no",
-                       guess3: "woohoo"
+                       id: 9,
+                       q:
+                         "In the series 'House' who played the part of 'Thirteen'?",
+                       guess1: "Olivia Wilde",
+                       guess2: "Jesse Spencer",
+                       guess3: "Jennifer Morrison",
+                       guess4: "Omar Epps"
                      },
                      {
                        id: 2,
@@ -212,7 +222,7 @@ export default class App extends Component {
                    ],
                    showGenAnswers: false,
                    showFilmAnswers: false,
-                   filmAnswers: ["Yo"],
+                   filmAnswers: ["Christopher Nolan", "Muriel", 'The Wire' , "The Illusionist", "Janitor", "Kate Fleming" , "The Princess Bride", "Corey Feldman", "Maggie Smith", "Olivia Wilde" ],
                    storedFilmAnswers: []
                  };
                  easterEgg = () => {

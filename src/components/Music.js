@@ -125,13 +125,24 @@ export default class Music extends Component {
                              })}
                            </div>
                            <p>Music Score - {this.state.score} / 10</p>
-                           <button
+                           {/* <button
                              onClick={() => {
                                this.handleClick(this.state.toggled);
                              }}
-                           >
-                             Back
-                           </button>
+                           > */}
+                             <div
+                               onClick={() => {
+                                 this.handleClick(this.state.toggled);
+                               }}
+                               class="backBtn"
+                               >
+                               
+                               <span class="line tLine"></span>
+                               <span class="line mLine"></span>
+                               <span class="label">Back to Homepage</span>
+                               <span class="line bLine"></span>
+                             </div>
+                           {/* </button> */}
                          </div>
                        </Animated>
                      );

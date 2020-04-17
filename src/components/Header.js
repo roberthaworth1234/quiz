@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function Header() {
   return (
-    <div>
+    <div className='header'>
       <h1>
         Pub Quiz
         <p className='head1'>on</p>
