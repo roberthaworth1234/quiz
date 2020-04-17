@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&family=Source+Sans+Pro:ital,wght@1,700&display=swap");
+.App {
+  text-align: center;
+  min-height: 800px;
+}
+.correct {
+  padding-top: 1px;
+  height: 20px;
+  width: 20px;
+}
+.photoround {
+  align-self: center;
+  border-radius: 20%;
+  width: 160px;
+  height: 200px;
+}
+
+.play {
+  border: solid 2px black;
+}
+/* input {
+  border-radius: 10%;
+  padding: 10px;
+} */
+h1 {
+  padding-top: 20px;
+  font-family: "Source Sans Pro";
+  color: goldenrod;
+  margin-top: 0px;
+}
+.head1 {
+  margin: 0px;
+  font-size: 12px;
+  color: black;
+}
+.head2 {
+  font-size: 18px;
+  margin-top: 0px;
+  position: relative;
+  font-family: "Lobster Two";
+  color: red;
+}
+input {
+  margin: 10px;
+  margin-right: 0px;
+  width: 200px;
+  box-sizing: border-box;
+  border: 2px solid rgb(167, 139, 139);
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: rgb(179, 179, 179);
+  background-image: url("https://img.icons8.com/android/24/000000/search.png");
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+  color: black;
+  width: 100%;
+}
+::placeholder {
+  color: black;
+  opacity: 0.65;
+}
+
+:-ms-input-placeholder {
+  color: black;
+}
+
+::-ms-input-placeholder {
+  color: black;
+}
+
+.attempts {
+  font-family: Helvetica, sans-serif;
+  margin: 5px;
+  color: white;
+  background-color: rgb(95, 10, 1);
+  box-sizing: border-box;
+  border: 4px solid rgb(167, 96, 96);
+  padding: 10px;
+  border-radius: 50%;
+  height: 66px;
+}
+
+#pic {
+  position: absolute;
+  bottom: 50px;
+}
+
+.ainsley {
+  align-self: center;
+  height: 600px;
+  width: 900px;
+}
+.ainshead {
+  animation: head 3s forwards;
+  animation-delay: 1s;
+  height: 200px;
+  width: 160px;
+}
+
+@keyframes head {
+  to {
+    transform: translateX(1500px) translateY(-900px);
+  }
+  from {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+.wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+#individ-pic {
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+}
+#individ-music {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin: 20px;
+}
+
+.btn {
+  border: solid 2px orange;
+  border-inline-start-color: slateblue;
+  border-inline-end-color: rgb(221, 18, 18);
+  align-self: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: grey;
+  color: white;
+}
+
+.btn1 {
+  border: solid 2px orange;
+  border-inline-start-color: slateblue;
+  border-inline-end-color: rgb(221, 18, 18);
+  align-self: center;
+  width: 80px;
+  box-shadow: 1px 2px #282c34;
+  height: 80px;
+  margin: 5px;
+  border-radius: 50%;
+  background-color: grey;
+  color: white;
+}
+div.animated.rotateInDownLeft {
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgba(36, 146, 104, 0.575)
+  );
+}
+.btn:hover {
+  animation: spin 1s forwards;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(720deg) scale(1.2);
+  }
+}
+
+.Applink {
+  display: flex;
+  flex-wrap: wrap;
+}
+.right-answer {
+  color: green;
+}
+.wrong-answer {
+  color: red;
+}
+.animated {
+  display: flex;
+  flex-direction: column;
+}
+.button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  width: 500px;
+  align-self: center;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #4caf50;
+}
+
+.button1:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+.button2 {
+  background-color: white;
+  color: black;
+  border: 2px solid #008cba;
+}
+
+.button2:hover {
+  background-color: #008cba;
+  color: white;
+}
+
+.button3 {
+  background-color: white;
+  color: black;
+  border: 2px solid #f44336;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+}
+
+.button4:hover {
+  background-color: #555555;
+  color: white;
+}
+
+.game-screen {
+  z-index: 200;
+  font-family: "Cantarell";
+  position: absolute;
+  border: 2px solid black;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 100px;
+  background-color: white;
+}
+.game-screen1 {
+  z-index: 200;
+  font-family: "Cantarell";
+  position: absolute;
+  border: 2px solid black;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: -1600px;
+  background-color: white;
+}
+.image {
+  align-self: center;
+  height: 100px;
+  max-width: 150px;
+}
+
+.rounds {
+  /* background-image: url('./Images/rubix.png');
+ background-size: 100%; */
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 300px;
+  width: 300px;
+  background-color: skyblue;
+  border: solid 3px;
+  border-radius: 10%;
+  opacity: 0.7;
+}
+.rounds:hover {
+  opacity: 1;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.green {
+  color: green;
+}
+.red {
+  color: red;
+}
+.rightpad {
+  padding-right: 80px;
+}
+.table {
+  margin: 10px auto;
+  height: 3px;
+  width: 80%;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  padding: 0px;
+}
+
+td {
+  padding: 5px;
+}
+th {
+  padding: 10px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
