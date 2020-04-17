@@ -23,8 +23,8 @@ export default class Ainslie extends Component {
         animationOutDuration={1500}
         isVisible={true}
       >
-        <p>Just for my special boys</p>
-       <button onClick={()=>{this.state.thisHowl.play()}}>Click Me</button>
+        <p className="ainsley1">Just for my special boys</p>
+       <button onClick={()=>{this.state.thisHowl.play()}}>Click For More Classic Ainsley</button>
         <img
           className="ainsley"
           src={require("../Images/Ainsley_Harriott.png")}

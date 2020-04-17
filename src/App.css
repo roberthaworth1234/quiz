@@ -7,9 +7,7 @@
   background-size: 100%;
   background-repeat: no-repeat;
 }
-.header {
 
-}
 .correct {
   padding-top: 1px;
   height: 20px;
@@ -38,13 +36,13 @@ h1 {
   margin-top: 0px;
 }
 .head1 {
-  padding-left:70px;
+  padding-left: 70px;
   margin: 0px;
   font-size: 12px;
   color: black;
 }
 .head2 {
-  padding-left:40px;
+  padding-left: 40px;
   font-size: 18px;
   margin-top: 0px;
   position: relative;
@@ -102,6 +100,9 @@ input[type="text"]:focus {
   bottom: 50px;
 }
 
+.ainsley1 {
+  font-family: "Cantarell";
+}
 .ainsley {
   align-self: center;
   height: 600px;

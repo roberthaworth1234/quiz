@@ -3,7 +3,7 @@ import PictureRound from "./components/PictureRound";
 import GeneralKnowledge from "./components/GeneralKnowledge";
 import FilmAndTV from "./components/FilmAndTv";
 import Music from "./components/Music";
-import Knockout from "./components/Knockout";
+
 import Header from "./components/Header";
 import Ainslie from './components/Ainslie'
 import Konami from "react-konami-code"
