@@ -4,7 +4,7 @@ const {getEditDistance} = require("../Utils/Utility")
 
 export default class IndividualMusicClip extends Component {
                  state = {
-                   timesPlayed: 3,
+                  timesPlayed: 3,
                    answer:'',
                    correct: null,
                    
@@ -13,18 +13,19 @@ export default class IndividualMusicClip extends Component {
                  componentDidMount() {
                    const { id } = this.props.clip 
                    let vol = 1;
-                    if(id <= 5) {
-                      vol = 0.4
+                   if(id <= 5) {
+                     vol = 0.4
                     }
                     console.log(vol)
-                   const thisHowl = new Howl({
-                     src: [require(`../audio/Clip${id}.mp3`)],
-                     autoplay: false,
-                     loop: false,
-                     volume: vol
-                   });
-                   return this.setState({ thisHowl });
-                 }
+                    const thisHowl = new Howl({
+                      src: [require(`../audio/Clip${id}.mp3`)],
+                      autoplay: false,
+                      loop: false,
+                      volume: vol
+                    });
+                    return this.setState({ thisHowl, correct: this.props.answered.includes(this.props.iteration) ? "✅" : null  });
+                  }
+              
                  render() {
                    const { clip } = this.props;
                    return (
@@ -56,21 +57,20 @@ export default class IndividualMusicClip extends Component {
                            Attempts: {this.props.attempts}
                          </button>
 
-                         {this.state.correct ? (
-                           <p>{this.state.correct}</p>
-                         ) : null}
+                         {this.props.answered.includes(this.props.iteration) ? <p>{this.state.correct}</p> : null}
                        </form>
                      </div>
                    );
                  }
                  playClip = () => {
-                   const { thisHowl, timesPlayed } = this.state;
+                   const { thisHowl } = this.state;
+                   const { timesPlayed} = this.props;
                    if (
                      timesPlayed === 1 ||
                      timesPlayed === 2 ||
                      timesPlayed === 3
                    ) {
-                     this.setState({ timesPlayed: timesPlayed - 1 });
+                     this.props.changePlayed(this.props.iteration);
                      return thisHowl.play();
                    }
                  };
@@ -89,7 +89,7 @@ export default class IndividualMusicClip extends Component {
                      distance <=1 &&
                      !this.state.correct
                    ) {
-                     this.props.updateScore();
+                     this.props.updateScore(this.props.iteration);
                      return this.setState({ answer1: "", correct: "✅" });
                    }
                    this.props.changeAttempts(this.props.iteration);

@@ -5,6 +5,9 @@ import IndividualMusicClip from "./IndividualMusicClip";
 export default class Music extends Component {
                  state = {
                    attempts: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+                   answered: [],
+                   timesPlayed: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
+
                    music: [
                      {
                        id: 1,
@@ -116,8 +119,11 @@ export default class Music extends Component {
                              {this.state.music.map((clip, i) => {
                                return (
                                  <IndividualMusicClip
+                                 timesPlayed={this.state.timesPlayed}
+                                changePlayed={this.changePlayed}
                                  changeAttempts={this.changeAttempts}
                                  iteration={i}
+                                   answered={this.state.answered}
                                    attempts={this.state.attempts[i]}
                                    updateScore={this.updateScore}
                                    clip={clip}
@@ -152,17 +158,26 @@ export default class Music extends Component {
                  handleClick = arg => {
                    this.setState({ toggled: !arg });
                  };
-                 updateScore = () => {
-                   const { score } = this.state;
-                   return this.setState({ score: score + 1 });
-                 };
-                 changeAttempts = iteration => {
-                   this.setState(currentState => {
-                     return {
-                       attempts: currentState.attempts.map((attempt, i) => {
-                         return i === iteration ? attempt - 1 : attempt;
-                       })
-                     };
-                   });
-                 };
+  updateScore = (iteration) => {
+    const { score, answered } = this.state;
+    if (!answered.includes(iteration)) {
+      return this.setState({ score: score + 1, answered: [...answered, iteration] });
+    }
+  };
+  changeAttempts = (iteration) => {
+    this.setState((currentState) => {
+      return {
+        attempts: currentState.attempts.map((attempt, i) => {
+          return i === iteration ? attempt - 1 : attempt
+        })
+      }
+    })
+  }
+  changePlayed = (iteration)=> {
+    this.setState(currentState => {
+     return  { timesPlayed: currentState.timesPlayed.map((played, i) => {
+       return i === iteration ? played - 1 : played
+     })  }
+    });
+  }
                }
