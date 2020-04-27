@@ -119,7 +119,7 @@ export default class Music extends Component {
                              {this.state.music.map((clip, i) => {
                                return (
                                  <IndividualMusicClip
-                                 timesPlayed={this.state.timesPlayed}
+                                 timesPlayed={this.state.timesPlayed[i]}
                                 changePlayed={this.changePlayed}
                                  changeAttempts={this.changeAttempts}
                                  iteration={i}

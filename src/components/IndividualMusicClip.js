@@ -16,7 +16,7 @@ export default class IndividualMusicClip extends Component {
                    if(id <= 5) {
                      vol = 0.4
                     }
-                    console.log(vol)
+                  
                     const thisHowl = new Howl({
                       src: [require(`../audio/Clip${id}.mp3`)],
                       autoplay: false,
