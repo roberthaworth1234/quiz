@@ -5,6 +5,8 @@ import { Animated } from "react-animated-css";
 export default class PictureRound extends Component {
                  state = {
                    score: 0,
+                   attempts : [3, 3, 3, 3, 3, 3, 3,3,3,3,3,3,3,3,3,3] ,
+                   answered: [],
                    images: [
                      {
                        id: 1,
@@ -115,8 +117,12 @@ export default class PictureRound extends Component {
                              {this.state.images.map((image, i) => {
                                return (
                                  <IndividualPicture
+                                    answered={this.state.answered}
+                                   changeAttempts={this.changeAttempts}
+                                   attempts={this.state.attempts[i]}
                                    updateScore={this.updateScore}
                                    key={image.path}
+                                   iteration={i}
                                    image={image}
                                  />
                                );
@@ -127,12 +133,12 @@ export default class PictureRound extends Component {
                              onClick={() => {
                                this.handleClick(this.state.toggled);
                              }}
-                             class="backBtn"
+                             className="backBtn"
                            >
-                             <span class="line tLine"></span>
-                             <span class="line mLine"></span>
-                             <span class="label">Back to Homepage</span>
-                             <span class="line bLine"></span>
+                             <span className="line tLine"></span>
+                             <span className="line mLine"></span>
+                             <span className="label">Back to Homepage</span>
+                             <span className="line bLine"></span>
                            </div>
                          </div>
                        </Animated>
@@ -142,8 +148,17 @@ export default class PictureRound extends Component {
                  handleClick = arg => {
                    this.setState({ toggled: !arg });
                  };
-                 updateScore = () => {
-                   const { score } = this.state;
-                   return this.setState({ score: score + 1 });
+                 updateScore = (iteration) => {
+                   const { score,answered } = this.state;
+                  if(!answered.includes(iteration)) {
+                    return this.setState({ score: score + 1, answered: [...answered, iteration] });
+                  }
                  };
+                 changeAttempts = (iteration) =>{
+                   this.setState((currentState)=> {
+                    return { attempts: currentState.attempts.map((attempt,i) => {
+                     return i === iteration ? attempt -1 : attempt
+                    })}
+                   })
+                 }
                }

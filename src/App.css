@@ -400,6 +400,7 @@ div.animated.rotateInDownLeft {
   padding-right: 80px;
 }
 .table {
+
   margin: 10px auto;
   height: 3px;
   width: 80%;
@@ -434,15 +435,48 @@ th {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .button {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: 220px;
+  }
+  .App {
+    background-image: none;
+  }
+  #individ-music {
+    margin-left: 10px;
+    padding-left: 10px;
+  }
+  .game-title {
+    margin-top: 90px;
+  }
+  .game-screen1 {
+    bottom: -7000px;
+  }
+  .label {
+    background-color: whitesmoke;
+  }
+
+  div.animated.rotateInDownLeft {
+    bottom: -20vh;
+  }
+  .game-screen {
+    bottom: 10px;
+  }
+  div.backBtn {
+    right: 50px;
+  }
+  .table {
+      font-size: 11px;
   }
 }

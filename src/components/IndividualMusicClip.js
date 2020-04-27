@@ -7,7 +7,7 @@ export default class IndividualMusicClip extends Component {
                    timesPlayed: 3,
                    answer:'',
                    correct: null,
-                   attempts: 3,
+                   
                    answer1: ''
                  };
                  componentDidMount() {
@@ -50,10 +50,10 @@ export default class IndividualMusicClip extends Component {
 
                          <button
                            className="btn1"
-                           disabled={this.state.attempts === 0}
+                           disabled={this.props.attempts === 0}
                            type="submit"
                          >
-                           Attempts: {this.state.attempts}
+                           Attempts: {this.props.attempts}
                          </button>
 
                          {this.state.correct ? (
@@ -92,8 +92,8 @@ export default class IndividualMusicClip extends Component {
                      this.props.updateScore();
                      return this.setState({ answer1: "", correct: "✅" });
                    }
+                   this.props.changeAttempts(this.props.iteration);
                    this.setState({
-                     attempts: this.state.attempts - 1,
                      answer1: ""
                    });
                  };

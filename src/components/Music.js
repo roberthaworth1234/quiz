@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 import { Animated } from "react-animated-css";
-import IndividualMusicClip from './IndividualMusicClip'
-
-
+import IndividualMusicClip from "./IndividualMusicClip";
 
 export default class Music extends Component {
                  state = {
+                   attempts: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3],
                    music: [
                      {
                        id: 1,
@@ -114,9 +113,12 @@ export default class Music extends Component {
                          <div className="game-screen" id="pic">
                            <h2 className="game-title">Music Round</h2>
                            <div className="wrap">
-                             {this.state.music.map(clip => {
+                             {this.state.music.map((clip, i) => {
                                return (
                                  <IndividualMusicClip
+                                 changeAttempts={this.changeAttempts}
+                                 iteration={i}
+                                   attempts={this.state.attempts[i]}
                                    updateScore={this.updateScore}
                                    clip={clip}
                                    key={clip.id}
@@ -130,18 +132,17 @@ export default class Music extends Component {
                                this.handleClick(this.state.toggled);
                              }}
                            > */}
-                             <div
-                               onClick={() => {
-                                 this.handleClick(this.state.toggled);
-                               }}
-                               class="backBtn"
-                               >
-                               
-                               <span class="line tLine"></span>
-                               <span class="line mLine"></span>
-                               <span class="label">Back to Homepage</span>
-                               <span class="line bLine"></span>
-                             </div>
+                           <div
+                             onClick={() => {
+                               this.handleClick(this.state.toggled);
+                             }}
+                             className="backBtn"
+                           >
+                             <span className="line tLine"></span>
+                             <span className="line mLine"></span>
+                             <span className="label">Back to Homepage</span>
+                             <span className="line bLine"></span>
+                           </div>
                            {/* </button> */}
                          </div>
                        </Animated>
@@ -154,5 +155,14 @@ export default class Music extends Component {
                  updateScore = () => {
                    const { score } = this.state;
                    return this.setState({ score: score + 1 });
+                 };
+                 changeAttempts = iteration => {
+                   this.setState(currentState => {
+                     return {
+                       attempts: currentState.attempts.map((attempt, i) => {
+                         return i === iteration ? attempt - 1 : attempt;
+                       })
+                     };
+                   });
                  };
                }

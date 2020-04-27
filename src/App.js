@@ -238,15 +238,6 @@ export default class App extends Component {
                        </Konami>
 
                        <div className="Applink">
-                         <PictureRound />
-                         <GeneralKnowledge
-                           storedAnswers={this.state.storedAnswers}
-                           showGenAnswers={this.state.showGenAnswers}
-                           storeAnswers={this.storeAnswers}
-                           answers={this.state.answers}
-                           questions={this.state.generalQuestions}
-                         />
-                         <Music />
                          <FilmAndTV
                            storedFilmAnswers={this.state.storedFilmAnswers}
                            showFilmAnswers={this.state.showFilmAnswers}
@@ -254,6 +245,15 @@ export default class App extends Component {
                            answers={this.state.filmAnswers}
                            questions={this.state.filmQuestions}
                          />
+                         <GeneralKnowledge
+                           storedAnswers={this.state.storedAnswers}
+                           showGenAnswers={this.state.showGenAnswers}
+                           storeAnswers={this.storeAnswers}
+                           answers={this.state.answers}
+                           questions={this.state.generalQuestions}
+                         />
+                         <PictureRound />
+                         <Music />
                          {/* <Knockout /> */}
                        </div>
                      </div>
